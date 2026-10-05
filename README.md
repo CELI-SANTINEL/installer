@@ -2,86 +2,70 @@
 
 # 🐍 PYTHON ENVIRONMENT INSTALLER
 
-### Installer Otomatis Python Environment untuk Termux & NetHunter Rootless
+### Setup Python Environment di Termux — 1 Perintah Langsung Siap
 
-![Platform](https://img.shields.io/badge/Platform-Termux%20%7C%20NetHunter-blue?style=for-the-badge&logo=android&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Termux](https://img.shields.io/badge/Termux-Only-blue?style=flat-square)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
 
-**Setup Python environment lengkap dalam 1 perintah.**
-**Cocok untuk OSINT, automation, web scraping, dan server.**
+**Script Bash buat setup Python environment di Termux.**
+**Install semua dependencies sekaligus — gak perlu install satu-satu.**
 
 </div>
 
 ---
 
-## 📖 Tentang Project
+## 📖 Apa Ini?
 
-**Python Environment Installer** adalah script Bash yang dirancang khusus untuk **Termux** dan **NetHunter Rootless**. Script ini menginstall semua dependencies yang dibutuhkan untuk menjalankan tools Python — dari core packages, networking, OSINT libraries, hingga server libraries.
+Script Bash buat install Python environment di **Termux**. Jadi kamu gak perlu install library satu-satu buat mulai ngoding.
 
-Dibuat untuk:
-- 🎯 **Pengguna Termux** — yang ingin setup cepat
-- 🐉 **Pengguna NetHunter Rootless** — tanpa perlu root
-- 🛠️ **Developer** — yang butuh environment lengkap
-- 🔍 **OSINT Enthusiast** — yang butuh tools lengkap
+Biasanya kalau mau bikin project Python di HP, kita harus install:
+- Python + pip
+- Compiler (buat build library)
+- Library dasar (requests, bs4, dll)
 
----
+Nah script ini ngelakuin itu semua **sekali jalan**.
 
-## ✨ Fitur
-
-### 🔧 Core Installation
-- ✅ Update & upgrade package Termux
-- ✅ Install Python, pip, git, curl, wget
-- ✅ Install compiler (clang, make, cmake, rust)
-- ✅ Install library native (openssl, libffi, libxml2, dll)
-
-### 📦 Python Libraries
-- ✅ **Core** — requests, urllib3, aiohttp, httpx
-- ✅ **Parsing** — beautifulsoup4, lxml
-- ✅ **CLI** — rich, colorama, pyfiglet, tqdm, tabulate
-- ✅ **Utility** — python-dotenv, pyyaml, psutil, pillow
-- ✅ **Crypto** — cryptography, pyOpenSSL
-
-### 🔍 OSINT Libraries
-- ✅ DNS — dnspython
-- ✅ WHOIS — python-whois, ipwhois
-- ✅ Domain — tldextract, pycountry
-- ✅ Search — googlesearch-python
-- ✅ Archive — waybackpy
-
-### 🌐 Server Libraries
-- ✅ Flask, FastAPI, Uvicorn
-- ✅ Gunicorn, WebSockets
-
-### 🛠️ Auto Repair
-- ✅ Upgrade pip, setuptools, wheel
-- ✅ Purge cache
-- ✅ Verifikasi instalasi
+**Khusus untuk:**
+- 📱 Pengguna Termux
+- 🔍 Yang lagi belajar Python di HP
+- 🛠️ Yang mau tools OSINT di Android
+- 🌐 Yang bikin web scraping / server
 
 ---
 
-## 📦 Persyaratan
+## ⚠️ Penting — Termux Only
 
-- 📱 **Termux** (dari F-Droid) — **BUKAN** Play Store
-- 🐉 **Atau** NetHunter Rootless
-- 🌐 **Koneksi internet** stabil
-- 💾 **Storage** minimal 2GB free
-- ⏰ **Waktu** ~5-15 menit
+Script ini **cuma jalan di Termux**. Gak bisa di:
+- ❌ Kali Linux
+- ❌ NetHunter
+- ❌ Ubuntu / Debian
+- ❌ Arch / Fedora
+- ❌ WSL / macOS
+
+**Alasannya**: script pakai `pkg` — command khusus Termux.
+
+Kalau jalanin di Linux biasa, langsung error `pkg: command not found`.
 
 ---
 
-## 🚀 Instalasi
+## 📦 Yang Dibutuhin
 
-### 📱 Termux
+- 📱 **Termux** — download dari **[F-Droid](https://f-droid.org/packages/com.termux/)**, bukan Play Store
+- 🌐 **Internet** stabil
+- 💾 **Storage** 2GB free minimal
+- ⏰ **Waktu** 5-15 menit (tergantung koneksi)
+
+---
+
+## 🚀 Cara Install
+
+### Step 1 — Install Termux
+
+Download dari F-Droid. Yang dari Play Store udah outdated, sering error.
+
+### Step 2 — Update Termux
 
 ```bash
-# 1. Update Termux
 pkg update && pkg upgrade -y
-
-# 2. Clone repo (atau download script)
-git clone https://github.com/USERNAME/REPO.git
-cd REPO
-
-# 3. Jalanin installer
 bash install.sh
